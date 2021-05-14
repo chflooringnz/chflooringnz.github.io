@@ -149,10 +149,10 @@
   settings:
     height: 500
     initialHeight:
-    maxHeight: 500
-    interval: 3000
+    maxHeight:
+    interval:
     transitionDuration:
-    effect: "'fade'"
+    effect:
     disableNav:
     keyboardNav:
     previousNavSelector:
