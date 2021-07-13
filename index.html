@@ -43,6 +43,36 @@
 	<script async src="http://static.getclicky.com/js"></script>
 </head>
 
+<script>
+$('.contact1-form').on('submit',function(e){
+        //optional validation code here
+  
+        e.preventDefault();
+      
+        $.ajax({
+		    url: "https://script.google.com/macros/s/AKfycbyl3msBqr3L2BfANahgoQyWsqqpITE4jBlzIjT57aeSLzokw-lYn_ERJcT27Uo7gGRx/exec",
+            method: "POST",
+            dataType: "json",
+            data: $(".contact1-form").serialize(),
+            success: function(response) {
+                
+                if(response.result == "success") {
+                    $('.contact1-form')[0].reset();
+                    alert('Thank you for contacting us.');
+                    return true;
+                }
+                else {
+                    alert("Something went wrong. Please try again.")
+                }
+            },
+            error: function() {
+                
+                alert("Something went wrong. Please try again.")
+            }
+        })
+    });
+</script>
+
 
 <body id="page-top">
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
