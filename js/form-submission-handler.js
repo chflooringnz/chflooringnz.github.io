@@ -69,15 +69,8 @@
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          form.reset();
-          var formElements = form.querySelector(".form-elements")
-          if (formElements) {
-            formElements.style.display = "none"; // hide form
-          }
-          var thankYouMessage = form.querySelector(".thankyou_message");
-          if (thankYouMessage) {
-            thankYouMessage.style.display = "block";
-          }
+		  alert('Thank you for leaving a review!');
+		  window.location.reload();
         }
     };
     // url encode form data for sending as post data
