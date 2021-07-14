@@ -1,0 +1,14 @@
+input[type="text"] {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #f05f40;
+  background-color: #dedede99;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #f05f40;
+  background-color: #dedede99;
+}

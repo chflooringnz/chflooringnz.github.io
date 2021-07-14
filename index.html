@@ -6,8 +6,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>CH Flooring</title>
 
@@ -24,6 +22,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/review.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,38 +41,6 @@
 	<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101316833);</script>
 	<script async src="http://static.getclicky.com/js"></script>
 </head>
-
-<script>
-$('.contact1-form').on('submit',function(e){
-        //optional validation code here
-  
-        e.preventDefault();
-      
-        $.ajax({
-		    url: "https://script.google.com/macros/s/AKfycbyl3msBqr3L2BfANahgoQyWsqqpITE4jBlzIjT57aeSLzokw-lYn_ERJcT27Uo7gGRx/exec",
-            method: "POST",
-            dataType: "json",
-            data: $(".contact1-form").serialize(),
-            success: function(response) {
-                
-                if(response.result == "success") {
-                    $('.contact1-form')[0].reset();
-                    alert('Thank you for contacting us.');
-                    return true;
-                }
-                else {
-                    alert("Something went wrong. Please try again.")
-                }
-            },
-            error: function() {
-                
-                alert("Something went wrong. Please try again.")
-            }
-        })
-    });
-</script>
-
-
 <body id="page-top">
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -267,28 +234,53 @@ $('.contact1-form').on('submit',function(e){
 
 <section id="review">
   <div class="container">
-  	<form method="post" action="subscriberform.php">
-	<textarea name="message"></textarea>
-	<input type="submit">
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+    <h2 class="section-heading">Add your review</h2>
+    <hr class="primary">
+  	<form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbw_4LVv1xm1AjCHEuky3NE8ZisxGOvbr_nY7I1DT6QqwZtQHtVcNjtcCpGgAF6JBEsG/exec">
+	<div class="inputbox">
+	  <label for="name">Name (this name will be displayed):</label><br>
+	  <input type="text" id="name" name="name">
+	  <br><br>
+      <label for="review">Review:</label><br>
+      <textarea id="review" name="review" rows="5"></textarea>
+	  <br><br>
+      <input type="submit" value="Submit">
+ 	  <div style="display:none" class="thankyou_message">
+      <h2>Thank you for leaving a review!</h2>
+      </div>
+	  </div>
 	</form>
+	<br><br>
+    <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Time</th>
+    <th>Name</th>
+    <th>Review</th>
+    </tr>
+    </thead>
+    <tbody id="demo"></tbody>
+    </table>
+	</div>
   </div>
 </section>
 
-  <section id="contact">
+  <section id="contact" style="background-color: #F05F40">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Let's Get In Touch!</h2>
-                <hr class="primary">
-                <p>Send an email or give us a call for enquires or to request for a quotation</p>
-            </div>
+                <h2 class="section-heading" style="color:white">Let's Get In Touch!</h2>
+                <hr class="light">
+                <p class="text-faded">Send an email or give us a call for enquires or to request for a quotation</p>
+           </div>
         	<div class="col-lg-4 col-lg-offset-2 text-center">
-        	    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-        	    <p>chflooringnz@gmail.com</p>
+        	    <i class="fa fa-envelope-o fa-3x wow bounceIn" style="color: white" data-wow-delay=".1s"></i>
+        	    <p  class="text-faded">chflooringnz@gmail.com</p>
         	</div>
         	<div class="col-lg-4 col-lg-offset-0 text-center">
-        	    <i class="fa fa-phone fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-        	    <p>022-042-9005</p>
+        	    <i class="fa fa-phone fa-3x wow bounceIn" style="color: white" data-wow-delay=".1s"></i>
+        	    <p class="text-faded">022-042-9005</p>
         	</div>
 		</div>
     </div>
@@ -322,5 +314,8 @@ $('.contact1-form').on('submit',function(e){
     gallery_slider.addCaptions();
     gallery_slider.start();
   </script>
+
+<script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+<script src="js/review-table.js"></script>
 </body>
 </html>
