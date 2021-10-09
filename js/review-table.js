@@ -7,10 +7,10 @@ function update_table() {
       document.getElementById("demo").innerHTML = "";
 
       let i;
-      for (i = 0; i < data.length; i++) {
-        let time = data[i]["gsx$time"]["$t"];
-        let name = data[i]["gsx$name"]["$t"];
-        let review = data[i]["gsx$review"]["$t"];
+      for (i = 1; i < data.length; i++) {
+        let time = data[i][0];
+        let name = data[i][1];
+        let review = data[i][2];
   
         document.getElementById("demo").innerHTML +=
   	    "<tr>" +
