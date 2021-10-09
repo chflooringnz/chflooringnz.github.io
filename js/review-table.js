@@ -30,7 +30,7 @@ function update_table() {
   
   xmlhttp.open(
     "GET",
-    "https://spreadsheets.google.com/feeds/list/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/od6/public/values?alt=json",
+    fetch('https://docs.google.com/spreadsheets/d/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/gviz/tq?tqx=out:json'),
     true
   );
   xmlhttp.send();
