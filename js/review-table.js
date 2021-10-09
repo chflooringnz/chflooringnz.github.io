@@ -28,7 +28,11 @@ function update_table() {
     }
   };
   
-  fetch('https://docs.google.com/spreadsheets/d/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/gviz/tq?tqx=out:json');
+  fetch('https://docs.google.com/spreadsheets/d/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/gviz/tq?tqx=out:json')
+    .then(res => res.text())
+    .then(text => {
+        const json = JSON.parse(text.substr(47).slice(0, -2))
+    });
 
   xmlhttp.open(
     "GET",
