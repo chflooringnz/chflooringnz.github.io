@@ -28,9 +28,11 @@ function update_table() {
     }
   };
   
+  fetch('https://docs.google.com/spreadsheets/d/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/gviz/tq?tqx=out:json');
+
   xmlhttp.open(
     "GET",
-    fetch('https://docs.google.com/spreadsheets/d/1FpcFJtoyGMJ4RRbrAXqFsSqQ78CxYRewasIzgzW8j8U/gviz/tq?tqx=out:json'),
+    json,
     true
   );
   xmlhttp.send();
